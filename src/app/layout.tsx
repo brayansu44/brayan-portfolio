@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    "https://brayan-portfolio-pnl.vercel.app"
+    "https://brayan-portfolio-phi.vercel.app"
   ),
 
   title: {
