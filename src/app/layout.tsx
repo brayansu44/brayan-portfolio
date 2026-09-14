@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
-
 import { Geist, Geist_Mono } from "next/font/google";
 
 import LanguageProvider, {
@@ -23,6 +22,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    "https://brayan-portfolio-pnl.vercel.app"
+  ),
+
   title: {
     default: "Brayan Suarez | Backend Developer",
     template: "%s | Brayan Suarez",
@@ -54,6 +57,10 @@ export const metadata: Metadata = {
   creator: "Brayan Suarez",
   publisher: "Brayan Suarez",
 
+  alternates: {
+    canonical: "/",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -61,6 +68,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
+    url: "/",
     locale: "es_CO",
     siteName: "Brayan Suarez Portfolio",
     title: "Brayan Suarez | Backend Developer",
@@ -84,7 +92,6 @@ const themeScript = `
       const savedTheme = localStorage.getItem("theme");
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const theme = savedTheme || (prefersDark ? "dark" : "light");
-
       document.documentElement.classList.toggle("dark", theme === "dark");
     } catch {}
   })();
